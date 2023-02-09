@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_auth/screens/home_screen.dart';
+import 'package:flutter_local_auth/screens/pin_input_screen.dart';
 
+
+//! there is two screen 
+//! first one is Auth screen
+//! second is Pin input screen
 void main() {
   runApp(const MyApp());
 }
@@ -14,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
+      // home: const PinputExample(),
       home: const MyHomePage(),
     );
   }
