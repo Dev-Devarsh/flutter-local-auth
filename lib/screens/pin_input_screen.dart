@@ -64,9 +64,11 @@ class _PinputExampleState extends State<PinputExample> {
                   listenForMultipleSmsOnAndroid: true,
                   defaultPinTheme: defaultPinTheme,
                   validator: (value) {
+                    //! here you will pass desired pin inted of [2222] to match the outPut
                     return value == '2222' ? null : 'Pin is incorrect';
                   },
                   onClipboardFound: (value) {
+                    //! if clipboard availiable then pin will be fetched from clipboard
                     log('onClipboardFound: $value');
                     pinController.setText(value);
                   },
@@ -88,12 +90,14 @@ class _PinputExampleState extends State<PinputExample> {
                       ),
                     ],
                   ),
+                  //! while inputing a number this theme will be displayed
                   focusedPinTheme: defaultPinTheme.copyWith(
                     decoration: defaultPinTheme.decoration!.copyWith(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: focusedBorderColor),
                     ),
                   ),
+                  //! when field is filed then this theme will be displayed
                   submittedPinTheme: defaultPinTheme.copyWith(
                     decoration: defaultPinTheme.decoration!.copyWith(
                       color: fillColor,
@@ -101,6 +105,7 @@ class _PinputExampleState extends State<PinputExample> {
                       border: Border.all(color: focusedBorderColor),
                     ),
                   ),
+                  //! if pin miss-matched then this theme will be displayed
                   errorPinTheme: defaultPinTheme.copyBorderWith(
                     border: Border.all(color: Colors.redAccent),
                   ),
